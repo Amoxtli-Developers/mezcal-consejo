@@ -54,9 +54,9 @@ export default function AgeVerification({ onVerified }: AgeVerificationProps) {
           <p className="text-navy-700 mb-4">
             {t('ageVerification.subtitle')}
           </p>
-          <p className="text-sm text-navy-600">
+          {/* <p className="text-sm text-navy-600">
             {t('ageVerification.description')}
-          </p>
+          </p> */}
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-4">
