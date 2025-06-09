@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "shop": "Tienda",
+    "gallery": "Galería",
+    "contact": "Contacto"
+  },
+  "loader": {
+    "loading": "Preparando experiencia"
+  },
+  "hero": {
+    "title": "MÁS QUE UN MEZCAL",
+    "subtitle": "una fuente de inspiración, porque hay momentos en que sólo necesitas un buen consejo para atreverte a hacer lo que te apasiona.",
+    "buyButton": "Comprar"
+  },
+  "about": {
+    "title": "Sobre el Mezcal",
+    "subtitle": "Tradición Ancestral",
+    "description": "Una bebida de comunión hecha siguiendo una tradición de cuidado por la tierra y el agave. Fruto de trabajo arduo, amor y paciencia.",
+    "sections": [
+      {
+        "subtitle": "origen",
+        "title": "Oaxaca",
+        "description": "Cuando bebes mezcal, cada sorbo evoca rasgos de su lugar de origen, cada copa va narrando aspectos de la identidad de un pueblo lleno de diversidad y color. Con denominación de origen en 9 regiones de México, Oaxaca produce más del 80% a nivel nacional. La producción de mezcal impacta directamente en el bienestar de las comunidades rurales, generando oportunidades y fuentes de empleo digno para miles de familias, manteniéndolas unidas, sin necesidad de emigrar para buscar mejores fuentes de ingresos. El mezcal es mucho más que una bebida espirituosa, está presente en los lugares, en los recuerdos, en las historias, en la música, la gastronomía. Gracias a un trabajo de revalorización y de dignificación, en la actualidad el mezcal ha ganado terreno en el mundo de la coctelaría y bebidas, haciéndose presente en todo el mundo."
+      },
+      {
+        "subtitle": "maestro mezcalero",
+        "title": "Maximíno Vázquez",
+        "description": "Con más de 20 años en el arte de destilar mezcal; aventurero y apasionado, sigue la tradición del oficio que le enseñó su padre, trabajando las mismas tierras con respeto y cuidado, perfeccionando sus técnicas y aprendiendo. No hay ningún secreto, solo trabajo arduo y años de experiencia. Todo tiene un límite, una frase escrita en la pared de su casa. Un hombre de rituales, un hombre sensible y sabio. Autor del primer lote de Mezcal Consejo."
+      },
+      {
+        "subtitle": "Región de los Valles Centrales",
+        "title": "San Baltazar Chichicápam",
+        "description": "Chichic es amargo y apan, en el agua. Su toponimia ha sido interpretada como Río de la amargura; dicho también En el agua amarga. Chichicápam fue uno de los centros comerciales más importantes debido a su ubicación estratégica en el intermedio de zonas y poblados de los valles centrales, lo que le hacía paso necesario a los destinos que hoy conocemos como la región del Istmo y Miahuatlán. Actualmente su principal actividad económica es la producción de mezcal."
+      },
+      {
+        "subtitle": "Hecho con amor",
+        "title": "El proceso",
+        "description": "El producto habla por sí mismo. Max es muy estricto en cada etapa del proceso, cultivando el agave de manera natural y orgánica, sin pesticidas o abonos químicos; respetando los tiempos de maduración, para cortar en el momento preciso y obtener la cantidad óptima de azúcares, para destilar un mezcal limpio y de calidad. En la graduación del producto final está el toque del autor. El mezcal de verdad se gradúa arriba de los 40º el reto es llegar a un sabor ligero y delicado, manteniendo el carácter y la fuerza del mezcal."
+      },
+      {
+        "subtitle": "El arte y la creatividad",
+        "title": "La imagen",
+        "description": "Descubrir el mezcal de Max fue una revelación, la tarea, darlo a conocer al mundo. La responsabilidad era grande; teníamos que hacer algo chingón para ponernos a la misma altura. Así reunimos esfuerzos y visiones para crear un concepto alineado con el arte, el sentir, y el imaginario mexicano, para poder ofrecer una experiencia única. Una experiencia inolvidable, como los buenos consejos."
+      }
+    ],
+    "text1": "Cada botella de Mezcal Consejo representa siglos de tradición y conocimiento ancestral. Nuestro proceso artesanal respeta los métodos tradicionales de cocción en hornos de tierra, fermentación natural y destilación en alambiques de cobre.",
+    "text2": "La selección cuidadosa del agave espadín y el proceso de añejamiento en barricas de roble americano le confieren a nuestro mezcal un sabor único y complejo, con notas ahumadas que evocan la tierra oaxaqueña."
+  },
+  "ourStory": {
+    "title": "Nuestra Historia",
+    "slides": [
+      {
+        "subtitle": "El origen",
+        "title": "Oaxaca",
+        "description": "Cuando bebes mezcal, cada sorbo evoca rasgos de su lugar de origen, cada copa va narrando aspectos de la identidad de un pueblo lleno de diversidad y color. Con denominación de origen en 9 regiones de México, Oaxaca produce más del 80% a nivel nacional. La producción de mezcal impacta directamente en el bienestar de las comunidades rurales, generando oportunidades y fuentes de empleo digno para miles de familias, manteniéndolas unidas, sin necesidad de emigrar para buscar mejores fuentes de ingresos. El mezcal es mucho más que una bebida espirituosa, está presente en los lugares, en los recuerdos, en las historias, en la música, la gastronomía. Gracias a un trabajo de revalorización y de dignificación, en la actualidad el mezcal ha ganado terreno en el mundo de la coctelería y bebidas, haciéndose presente en todo el mundo."
+      },
+      {
+        "subtitle": "Maestro Mezcalero",
+        "title": "Maximino Vázquez",
+        "description": "Con más de 20 años en el arte de destilar mezcal; aventurero y apasionado, sigue la tradición del oficio que le enseñó su padre, trabajando las mismas tierras con respeto y cuidado, perfeccionando sus técnicas y aprendiendo. No hay ningún secreto, solo trabajo arduo y años de experiencia. 'Todo tiene un límite', una frase escrita en la pared de su casa. Un hombre de rituales, un hombre sensible y sabio. Autor del primer lote de Mezcal Consejo."
+      },
+      {
+        "subtitle": "Región de los Valles Centrales",
+        "title": "San Baltazar Chichicápam",
+        "description": "Chichic es 'amargo' y apan, 'en el agua' Su toponimia ha sido interpretada como 'Río de la amargura'; dicho también 'En el agua amarga'. Chichicápam fue uno de los centros comerciales más importantes debido a su ubicación estratégica en el intermedio de zonas y poblados de los valles centrales, lo que le hacía paso necesario a los destinos que hoy conocemos como la región del Istmo y Miahuatlán. Actualmente su principal actividad económica es la producción de mezcal."
+      },
+      {
+        "subtitle": "Hecho con amor",
+        "title": "El Proceso",
+        "description": "El producto habla por sí mismo. Max es muy estricto en cada etapa del proceso, cultivando el agave de manera natural y orgánica, sin pesticidas o abonos químicos; respetando los tiempos de maduración, para cortar en el momento preciso y obtener la cantidad óptima de azúcares, para destilar un mezcal limpio y de calidad. En la graduación del producto final está el toque del autor. El mezcal de verdad se gradúa arriba de los 40º el reto es llegar a un sabor ligero y delicado, manteniendo el carácter y la fuerza del mezcal."
+      },
+      {
+        "subtitle": "El arte y la creatividad",
+        "title": "La imagen",
+        "description": "Descubrir el mezcal de Max fue una revelación, la tarea, darlo a conocer al mundo. La responsabilidad era grande; teníamos que hacer algo chingón para ponernos a la misma altura. Así reunimos esfuerzos y visiones para crear un concepto alineado con el arte, el sentir, y el imaginario mexicano, para poder ofrecer una experiencia única. Una experiencia inolvidable, como los buenos consejos."
+      }
+    ]
+  },
+  "product": {
+    "title": "Mezcal Consejo Artesanal",
+    "description": "Un mezcal de pequeños lotes elaborado con agave espadín 100% artesanal. Notas ahumadas con toques florales y frutales, perfecto para degustar solo o en cócteles.",
+    "price": "$1,250 MXN",
+    "buyButton": "Comprar",
+    "details": {
+      "title": "Detalles del Producto",
+      "agave": "Agave: Espadín (Agave angustifolia)",
+      "region": "Región: Santiago Matatlán, Oaxaca",
+      "alcohol": "Alcohol: 40% Vol.",
+      "production": "Producción: 100% Artesanal",
+      "aging": "Añejamiento: Reposado 6 meses"
+    }
+  },
+  "gallery": {
+    "title": "Galería"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes alguna pregunta? Contáctanos",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "slogan": "Tradición en cada gota",
+    "sections": "Secciones",
+    "contact": "Contacto",
+    "social": "Redes Sociales",
+    "email": "info@mezcalconsejo.com",
+    "phone": "+52 951 123 4567",
+    "copyright": "© 2025 Mezcal Consejo. Todos los derechos reservados. Desarrollado por "
+  },
+  "ageVerification": {
+    "title": "Verificación de Edad",
+    "subtitle": "Para acceder a este sitio web, debes ser mayor de edad",
+    "description": "El consumo de bebidas alcohólicas está restringido a personas mayores de 18 años. Por favor, ingresa tu fecha de nacimiento para continuar.",
+    "birthDate": "Fecha de Nacimiento",
+    "enter": "Ingresar al Sitio",
+    "underAge": "Debes ser mayor de 18 años para acceder a este sitio."
+  }
+}

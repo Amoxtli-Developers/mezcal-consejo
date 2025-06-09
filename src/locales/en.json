@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "shop": "Shop",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "loader": {
+    "loading": "Preparing experience"
+  },
+  "hero": {
+    "title": "MORE THAN A MEZCAL",
+    "subtitle": "a source of inspiration, because there are moments when you just need good advice to dare to do what you're passionate about.",
+    "buyButton": "BUY"
+  },
+  "about": {
+    "title": "About Mezcal",
+    "subtitle": "Ancestral Tradition",
+    "description": "A communion drink made following a tradition of caring for the land and agave. The result of hard work, love and patience.",
+    "sections": [
+      {
+        "subtitle": "origin",
+        "title": "Oaxaca",
+        "description": "When you drink mezcal, each sip evokes traits of its place of origin, each glass narrates aspects of the identity of a people full of diversity and color. With denomination of origin in 9 regions of Mexico, Oaxaca produces more than 80% at the national level. Mezcal production directly impacts the welfare of rural communities, generating opportunities and sources of dignified employment for thousands of families, keeping them united, without the need to emigrate to seek better sources of income. Mezcal is much more than a spirituous beverage, it is present in places, in memories, in stories, in music, in gastronomy. Thanks to revaluation and dignification work, mezcal has currently gained ground in the world of cocktails and beverages, making its presence felt throughout the world."
+      },
+      {
+        "subtitle": "master mezcalero",
+        "title": "Maximíno Vázquez",
+        "description": "With more than 20 years in the art of distilling mezcal; adventurous and passionate, he follows the tradition of the craft that his father taught him, working the same lands with respect and care, perfecting his techniques and learning. There is no secret, just hard work and years of experience. Everything has a limit, a phrase written on the wall of his house. A man of rituals, a sensitive and wise man. Author of the first batch of Mezcal Consejo."
+      },
+      {
+        "subtitle": "Central Valleys Region",
+        "title": "San Baltazar Chichicápam",
+        "description": "Chichic is bitter and apan, in the water. Its toponymy has been interpreted as River of bitterness; also said In the bitter water. Chichicápam was one of the most important commercial centers due to its strategic location in the intermediate of zones and towns of the central valleys, which made it a necessary passage to the destinations that we know today as the Isthmus region and Miahuatlán. Currently its main economic activity is mezcal production."
+      },
+      {
+        "subtitle": "Made with love",
+        "title": "The process",
+        "description": "The product speaks for itself. Max is very strict in each stage of the process, cultivating agave naturally and organically, without pesticides or chemical fertilizers; respecting maturation times, to cut at the precise moment and obtain the optimal amount of sugars, to distill a clean and quality mezcal. In the graduation of the final product is the author's touch. Real mezcal is graduated above 40º the challenge is to reach a light and delicate flavor, maintaining the character and strength of mezcal."
+      },
+      {
+        "subtitle": "Art and creativity",
+        "title": "The image",
+        "description": "Discovering Max's mezcal was a revelation, the task, to make it known to the world. The responsibility was great; we had to do something amazing to put ourselves at the same level. Thus we gathered efforts and visions to create a concept aligned with art, feeling, and the Mexican imaginary, to be able to offer a unique experience. An unforgettable experience, like good advice."
+      }
+    ],
+    "text1": "Each bottle of Mezcal Consejo represents centuries of tradition and ancestral knowledge. Our artisanal process respects traditional methods of cooking in earth ovens, natural fermentation and distillation in copper stills.",
+    "text2": "The careful selection of espadin agave and the aging process in American oak barrels give our mezcal a unique and complex flavor, with smoky notes that evoke the Oaxacan land."
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "slides": [
+      {
+        "subtitle": "The origin",
+        "title": "Oaxaca",
+        "description": "When you drink mezcal, each sip evokes traces of its place of origin, each glass narrates aspects of the identity of a people full of diversity and color. With denomination of origin in 9 regions of Mexico, Oaxaca produces more than 80% nationally. Mezcal production directly impacts the welfare of rural communities, generating opportunities and sources of dignified employment for thousands of families, keeping them together, without the need to emigrate to seek better sources of income. Mezcal is much more than a spiritual drink, it is present in places, in memories, in stories, in music, gastronomy. Thanks to work of revaluation and dignification, mezcal has currently gained ground in the world of cocktails and beverages, making itself present throughout the world."
+      },
+      {
+        "subtitle": "Master Mezcalero",
+        "title": "Maximino Vázquez",
+        "description": "With more than 20 years in the art of distilling mezcal; adventurous and passionate, he follows the tradition of the craft that his father taught him, working the same lands with respect and care, perfecting his techniques and learning. There is no secret, just hard work and years of experience. 'Everything has a limit', a phrase written on the wall of his house. A man of rituals, a sensitive and wise man. Author of the first batch of Mezcal Consejo."
+      },
+      {
+        "subtitle": "Central Valleys Region",
+        "title": "San Baltazar Chichicápam",
+        "description": "Chichic is 'bitter' and apan, 'in the water' Its toponymy has been interpreted as 'River of bitterness'; also said 'In the bitter water'. Chichicápam was one of the most important commercial centers due to its strategic location in the intermediate of zones and towns of the central valleys, which made it a necessary passage to the destinations that we know today as the Isthmus region and Miahuatlán. Currently its main economic activity is mezcal production."
+      },
+      {
+        "subtitle": "Made with love",
+        "title": "The Process",
+        "description": "The product speaks for itself. Max is very strict in each stage of the process, cultivating agave naturally and organically, without pesticides or chemical fertilizers; respecting maturation times, to cut at the precise moment and obtain the optimal amount of sugars, to distill a clean and quality mezcal. In the graduation of the final product is the author's touch. Real mezcal is graduated above 40º the challenge is to achieve a light and delicate flavor, maintaining the character and strength of mezcal."
+      },
+      {
+        "subtitle": "Art and creativity",
+        "title": "The image",
+        "description": "Discovering Max's mezcal was a revelation, the task, to make it known to the world. The responsibility was great; we had to do something awesome to put ourselves at the same level. So we gathered efforts and visions to create a concept aligned with art, feeling, and the Mexican imaginary, to be able to offer a unique experience. An unforgettable experience, like good advice."
+      }
+    ]
+  },
+  "product": {
+    "title": "Mezcal Consejo Artisanal",
+    "description": "A small-batch mezcal made with 100% artisanal espadin agave. Smoky notes with floral and fruity touches, perfect for sipping neat or in cocktails.",
+    "price": "$65 USD",
+    "buyButton": "Buy",
+    "details": {
+      "title": "Product Details",
+      "agave": "Agave: Espadín (Agave angustifolia)",
+      "region": "Region: Santiago Matatlán, Oaxaca",
+      "alcohol": "Alcohol: 40% Vol.",
+      "production": "Production: 100% Artisanal",
+      "aging": "Aging: Reposado 6 months"
+    }
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have any questions? Contact us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "slogan": "Tradition in every drop",
+    "sections": "Sections",
+    "contact": "Contact",
+    "social": "Social Media",
+    "email": "info@mezcalconsejo.com",
+    "phone": "+52 951 123 4567",
+    "copyright": "© 2025 Mezcal Consejo. All rights reserved. Developed by "
+  },
+  "ageVerification": {
+    "title": "Age Verification",
+    "subtitle": "To access this website, you must be of legal age",
+    "description": "The consumption of alcoholic beverages is restricted to people over 18 years old. Please enter your date of birth to continue.",
+    "birthDate": "Date of Birth",
+    "enter": "Enter Site",
+    "underAge": "You must be over 18 years old to access this site."
+  }
+}
