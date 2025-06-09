@@ -13,7 +13,7 @@ export default function AboutSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Image Column */}
                     <div className="order-2 lg:order-1">
-                        <div className="relative aspect-square rounded-lg overflow-hidden shadow-xl">
+                        <div className="relative aspect-square overflow-hidden shadow-xl">
                             <Image
                                 src={aboutImage.src}
                                 alt="Agave plants in Oaxaca"
@@ -27,15 +27,15 @@ export default function AboutSection() {
                     {/* Content Column */}
                     <div className="order-1 lg:order-2 space-y-6">
                         <div>
-                            <h3 className="text-navy-600 font-semibold text-sm mb-2">
+                            <h3 className="text-navy-600 font-medium text-sm mb-2">
                                 {t("about.subtitle")}
                             </h3>
-                            <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
+                            <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-6">
                                 {t("about.title")}
                             </h2>
                         </div>
 
-                        <p className="text-base text-navy-700 leading-relaxed">
+                        <p className="text-base text-navy-700 leading-relaxed font-light">
                             {t("about.description")}
                         </p>
 

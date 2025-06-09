@@ -43,7 +43,7 @@ export default function GallerySection() {
         <section id="gallery" className="section-padding bg-navy-50">
             <div className="max-w-7xl mx-auto container-padding">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+                    <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-6">
                         {t("gallery.title")}
                     </h2>
                 </div>
@@ -52,7 +52,7 @@ export default function GallerySection() {
                     {galleryImages.map((image, index) => (
                         <div
                             key={index}
-                            className="relative h-64 rounded-lg overflow-hidden shadow-lg group"
+                            className="relative h-64 overflow-hidden shadow-lg group"
                         >
                             <Image
                                 src={image.src}

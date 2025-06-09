@@ -67,18 +67,18 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
       
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto container-padding">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-medium mb-6 animate-fade-in">
           {t('hero.title')}
         </h1>
         
-        <p className="text-base md:text-lg mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed animate-slide-up">
+        <p className="text-base md:text-lg mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed animate-slide-up font-light">
           {t('hero.subtitle')}
         </p>
         
         <Button
           onClick={scrollToProduct}
           size="lg"
-          className="bg-white text-navy-900 hover:bg-navy-50 px-6 py-3 text-base font-semibold animate-slide-up normal-case"
+          className="bg-white text-navy-900 hover:bg-navy-50 px-6 py-3 text-base font-medium animate-slide-up normal-case"
         >
             <span className="flex items-center gap-2">
               {t('hero.buyButton')}

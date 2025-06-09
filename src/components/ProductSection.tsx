@@ -34,16 +34,16 @@ export default function ProductSection() {
           {/* Product Details */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
+              <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-4">
                 {t('product.title')}
               </h2>
-              <p className="text-base text-navy-700 leading-relaxed">
+              <p className="text-base text-navy-700 leading-relaxed font-light">
                 {t('product.description')}
               </p>
             </div>
             
             {/* Price */}
-            <div className="text-2xl font-bold text-navy-900">
+            <div className="text-2xl font-medium text-navy-900">
               {t('product.price')}
             </div>
             
@@ -51,7 +51,7 @@ export default function ProductSection() {
             <Button
               onClick={handleBuyClick}
               size="lg"
-              className="bg-navy-900 hover:bg-navy-800 px-6 py-3 text-base font-semibold"
+              className="bg-navy-900 hover:bg-navy-800 px-6 py-3 text-base font-medium"
             >
             <span className="flex items-center gap-2">
               {t('product.buyButton')}
@@ -60,30 +60,30 @@ export default function ProductSection() {
             </Button>
 
             {/* Product Details */}
-            <div className="bg-navy-50 p-6 rounded-lg">
-              <h3 className="text-lg font-bold text-navy-900 mb-4">
+            <div className="bg-navy-50 p-6">
+              <h3 className="text-lg font-medium text-navy-900 mb-4">
                 {t('product.details.title')}
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm">{t('product.details.agave').split(':')[0]}:</span>
-                  <span className="font-medium text-navy-900 text-sm">{t('product.details.agave').split(':')[1]}</span>
+                  <span className="text-navy-700 text-sm font-light">{t('product.details.agave').split(':')[0]}:</span>
+                  <span className="font-normal text-navy-900 text-sm">{t('product.details.agave').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm">{t('product.details.region').split(':')[0]}:</span>
-                  <span className="font-medium text-navy-900 text-sm">{t('product.details.region').split(':')[1]}</span>
+                  <span className="text-navy-700 text-sm font-light">{t('product.details.region').split(':')[0]}:</span>
+                  <span className="font-normal text-navy-900 text-sm">{t('product.details.region').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm">{t('product.details.alcohol').split(':')[0]}:</span>
-                  <span className="font-medium text-navy-900 text-sm">{t('product.details.alcohol').split(':')[1]}</span>
+                  <span className="text-navy-700 text-sm font-light">{t('product.details.alcohol').split(':')[0]}:</span>
+                  <span className="font-normal text-navy-900 text-sm">{t('product.details.alcohol').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm">{t('product.details.production').split(':')[0]}:</span>
-                  <span className="font-medium text-navy-900 text-sm">{t('product.details.production').split(':')[1]}</span>
+                  <span className="text-navy-700 text-sm font-light">{t('product.details.production').split(':')[0]}:</span>
+                  <span className="font-normal text-navy-900 text-sm">{t('product.details.production').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm">{t('product.details.aging').split(':')[0]}:</span>
-                  <span className="font-medium text-navy-900 text-sm">{t('product.details.aging').split(':')[1]}</span>
+                  <span className="text-navy-700 text-sm font-light">{t('product.details.aging').split(':')[0]}:</span>
+                  <span className="font-normal text-navy-900 text-sm">{t('product.details.aging').split(':')[1]}</span>
                 </div>
               </div>
             </div>

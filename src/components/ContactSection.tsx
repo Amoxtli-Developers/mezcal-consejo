@@ -27,10 +27,10 @@ export default function ContactSection() {
     <section id="contact" className="section-padding bg-white">
       <div className="max-w-4xl mx-auto container-padding">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
+          <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-6">
             {t('contact.title')}
           </h2>
-          <p className="text-base text-navy-700">
+          <p className="text-base text-navy-700 font-light">
             {t('contact.subtitle')}
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function ContactSection() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-navy-700 mb-2">
+              <label className="block text-sm font-normal text-navy-700 mb-2">
                 {t('contact.form.name')}
               </label>
               <Input
@@ -52,7 +52,7 @@ export default function ContactSection() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-navy-700 mb-2">
+              <label className="block text-sm font-normal text-navy-700 mb-2">
                 {t('contact.form.email')}
               </label>
               <Input
@@ -74,7 +74,7 @@ export default function ContactSection() {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">
+            <label className="block text-sm font-normal text-navy-700 mb-2">
               {t('contact.form.message')}
             </label>
             <Textarea
@@ -92,7 +92,7 @@ export default function ContactSection() {
             <Button
               type="submit"
               size="lg"
-              className="bg-navy-900 hover:bg-navy-800 px-6 py-3 text-base font-semibold"
+              className="bg-navy-900 hover:bg-navy-800 px-6 py-3 text-base font-medium"
             >
               {t('contact.form.send')}
             </Button>

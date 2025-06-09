@@ -46,12 +46,12 @@ export default function AgeVerification({ onVerified }: AgeVerificationProps) {
 
   return (
     <div className="fixed inset-0 bg-navy-900 bg-opacity-95 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+      <div className="bg-white p-8 max-w-md w-full mx-4">
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-navy-900 mb-2">
+          <h2 className="text-2xl font-medium text-navy-900 mb-2">
             {t('ageVerification.title')}
           </h2>
-          <p className="text-navy-700 mb-4">
+          <p className="text-navy-700 mb-4 font-light">
             {t('ageVerification.subtitle')}
           </p>
           {/* <p className="text-sm text-navy-600">
@@ -61,7 +61,7 @@ export default function AgeVerification({ onVerified }: AgeVerificationProps) {
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">
+            <label className="block text-sm font-normal text-navy-700 mb-2">
               {t('ageVerification.birthDate')}
             </label>
             <Input

@@ -10,12 +10,29 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       // Cambiar cuando se sale del hero section (aproximadamente la altura de la ventana)
       setScrolled(window.scrollY > window.innerHeight - 100);
+
+      // Detectar sección activa
+      const sections = ['hero', 'about', 'our-story', 'product', 'gallery', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      
+      if (current) {
+        setActiveSection(current);
+      }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,6 +60,15 @@ export default function Navbar() {
     { key: 'contact', section: 'contact' },
   ];
 
+  const isActive = (section: string) => {
+    if (section === 'hero') return activeSection === 'hero';
+    if (section === 'about') return activeSection === 'about';
+    if (section === 'product') return activeSection === 'product';
+    if (section === 'gallery') return activeSection === 'gallery';
+    if (section === 'contact') return activeSection === 'contact';
+    return false;
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
       scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
@@ -65,7 +91,7 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <span className={`ml-2.5 text-base font-bold transition-all duration-300 leading-tight self-center ${
+            <span className={`ml-2.5 text-base font-medium transition-all duration-300 leading-tight self-center ${
               scrolled ? 'text-navy-900' : 'text-white'
             }`}>Mezcal Consejo</span>
           </div>
@@ -76,13 +102,23 @@ export default function Navbar() {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.section)}
-                className={`font-medium text-sm transition-colors duration-200 ${
-                  scrolled 
-                    ? 'text-navy-700 hover:text-navy-900' 
-                    : 'text-white/90 hover:text-white'
+                className={`font-normal text-sm transition-colors duration-200 relative ${
+                  isActive(item.section)
+                    ? scrolled 
+                      ? 'text-navy-900 font-medium' 
+                      : 'text-white font-medium'
+                    : scrolled 
+                      ? 'text-navy-700 hover:text-navy-900' 
+                      : 'text-white/90 hover:text-white'
                 }`}
               >
                 {t(`nav.${item.key}`)}
+                {/* Active indicator */}
+                {isActive(item.section) && (
+                  <span className={`absolute -bottom-1 left-0 w-full h-0.5 transition-all duration-200 ${
+                    scrolled ? 'bg-navy-900' : 'bg-white'
+                  }`} />
+                )}
               </button>
             ))}
             
@@ -160,13 +196,23 @@ export default function Navbar() {
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.section)}
-                  className={`block w-full text-left px-4 py-2 transition-colors duration-200 ${
-                    scrolled 
-                      ? 'text-navy-700 hover:text-navy-900 hover:bg-navy-50' 
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                  className={`block w-full text-left px-4 py-2 transition-colors duration-200 relative ${
+                    isActive(item.section)
+                      ? scrolled 
+                        ? 'text-navy-900 bg-navy-100 font-medium' 
+                        : 'text-white bg-white/20 font-medium'
+                      : scrolled 
+                        ? 'text-navy-700 hover:text-navy-900 hover:bg-navy-50' 
+                        : 'text-white/90 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {t(`nav.${item.key}`)}
+                  {/* Active indicator for mobile */}
+                  {isActive(item.section) && (
+                    <span className={`absolute left-0 top-0 w-1 h-full transition-all duration-200 ${
+                      scrolled ? 'bg-navy-900' : 'bg-white'
+                    }`} />
+                  )}
                 </button>
               ))}
             </div>
