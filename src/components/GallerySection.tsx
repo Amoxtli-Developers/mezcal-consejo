@@ -40,10 +40,10 @@ export default function GallerySection() {
     ];
 
     return (
-        <section id="gallery" className="section-padding bg-navy-50">
+        <section id="gallery" className="section-padding bg-navy-900">
             <div className="max-w-7xl mx-auto container-padding">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-6">
+                    <h2 className="text-3xl lg:text-4xl font-medium text-white mb-6">
                         {t("gallery.title")}
                     </h2>
                 </div>
