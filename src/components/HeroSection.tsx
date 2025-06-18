@@ -51,10 +51,10 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
           src="https://player.vimeo.com/video/1091673803?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1&controls=0&title=0&byline=0&portrait=0"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           style={{
-            width: '177.78vh', // 16:9 aspect ratio adjustment
+            width: '177.78vh',
             height: '100vh',
             minWidth: '100vw',
-            minHeight: '56.25vw', // 16:9 aspect ratio
+            minHeight: '56.25vw', 
           }}
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
@@ -78,7 +78,7 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
         <Button
           onClick={scrollToProduct}
           size="lg"
-          className="bg-white text-navy-900 hover:bg-navy-50 px-6 py-3 text-base font-medium animate-slide-up normal-case"
+          className="bg-navy-900 text-white hover:bg-navy-50 hover:text-black px-6 py-3 text-base font-medium animate-slide-up normal-case"
         >
             <span className="flex items-center gap-2">
               {t('hero.buyButton')}

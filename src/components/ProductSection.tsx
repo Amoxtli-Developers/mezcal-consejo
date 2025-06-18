@@ -60,30 +60,30 @@ export default function ProductSection() {
             </Button>
 
             {/* Product Details */}
-            <div className="bg-navy-50 p-6">
-              <h3 className="text-lg font-medium text-navy-900 mb-4">
+            <div className="bg-navy-900 p-6">
+              <h3 className="text-lg font-medium text-white mb-4">
                 {t('product.details.title')}
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm font-light">{t('product.details.agave').split(':')[0]}:</span>
-                  <span className="font-normal text-navy-900 text-sm">{t('product.details.agave').split(':')[1]}</span>
+                  <span className="text-white text-sm font-light">{t('product.details.agave').split(':')[0]}:</span>
+                  <span className="font-normal text-white text-sm">{t('product.details.agave').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm font-light">{t('product.details.region').split(':')[0]}:</span>
-                  <span className="font-normal text-navy-900 text-sm">{t('product.details.region').split(':')[1]}</span>
+                  <span className="text-white text-sm font-light">{t('product.details.region').split(':')[0]}:</span>
+                  <span className="font-normal text-white text-sm">{t('product.details.region').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm font-light">{t('product.details.alcohol').split(':')[0]}:</span>
-                  <span className="font-normal text-navy-900 text-sm">{t('product.details.alcohol').split(':')[1]}</span>
+                  <span className="text-white text-sm font-light">{t('product.details.alcohol').split(':')[0]}:</span>
+                  <span className="font-normal text-white text-sm">{t('product.details.alcohol').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm font-light">{t('product.details.production').split(':')[0]}:</span>
-                  <span className="font-normal text-navy-900 text-sm">{t('product.details.production').split(':')[1]}</span>
+                  <span className="text-white text-sm font-light">{t('product.details.production').split(':')[0]}:</span>
+                  <span className="font-normal text-white text-sm">{t('product.details.production').split(':')[1]}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-navy-700 text-sm font-light">{t('product.details.aging').split(':')[0]}:</span>
-                  <span className="font-normal text-navy-900 text-sm">{t('product.details.aging').split(':')[1]}</span>
+                  <span className="text-white text-sm font-light">{t('product.details.aging').split(':')[0]}:</span>
+                  <span className="font-normal text-white text-sm">{t('product.details.aging').split(':')[1]}</span>
                 </div>
               </div>
             </div>

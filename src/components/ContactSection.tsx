@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Mail, User } from 'lucide-react';
 
 interface ContactFormData {
   name: string;
@@ -17,77 +18,69 @@ export default function ContactSection() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
 
   const onSubmit = (data: ContactFormData) => {
-    // Aquí puedes agregar la lógica para enviar el formulario
     console.log('Form data:', data);
     alert('Mensaje enviado correctamente!');
     reset();
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="max-w-4xl mx-auto container-padding">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-6">
-            {t('contact.title')}
-          </h2>
-          <p className="text-base text-navy-700 font-light">
-            {t('contact.subtitle')}
-          </p>
+    <section id="contact" className="py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-medium text-navy-900 mb-4">{t('contact.title')}</h2>
+          <p className="text-lg text-gray-600">{t('contact.subtitle')}</p>
         </div>
-        
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-10 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-normal text-navy-700 mb-2">
-                {t('contact.form.name')}
-              </label>
+            <div className="flex items-center">
+              <span className="bg-navy-900 p-2">
+                <User className="w-6 h-6 text-white" />
+              </span>
               <Input
                 {...register('name', { required: 'Este campo es requerido' })}
-                className="w-full"
+                className="w-full px-4 py-3 border-gray-300"
                 placeholder={t('contact.form.name')}
               />
               {errors.name && (
-                <p className="text-red-600 text-sm mt-1">{errors.name.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.name.message}</p>
               )}
             </div>
-            
-            <div>
-              <label className="block text-sm font-normal text-navy-700 mb-2">
-                {t('contact.form.email')}
-              </label>
+
+            <div className="flex items-center">
+              <span className="bg-navy-900 p-2">
+                <Mail className="w-6 h-6 text-white" />
+              </span>
               <Input
                 type="email"
-                {...register('email', { 
+                {...register('email', {
                   required: 'Este campo es requerido',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: 'Email inválido'
                   }
                 })}
-                className="w-full"
+                className="w-full px-4 py-3 border-gray-300"
                 placeholder={t('contact.form.email')}
               />
               {errors.email && (
-                <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
               )}
             </div>
           </div>
-          
+
           <div>
-            <label className="block text-sm font-normal text-navy-700 mb-2">
-              {t('contact.form.message')}
-            </label>
             <Textarea
               {...register('message', { required: 'Este campo es requerido' })}
-              className="w-full"
+              className="w-full px-4 py-3 border-gray-300"
               rows={6}
               placeholder={t('contact.form.message')}
             />
             {errors.message && (
-              <p className="text-red-600 text-sm mt-1">{errors.message.message}</p>
+              <p className="text-red-500 text-sm mt-2">{errors.message.message}</p>
             )}
           </div>
-          
+
           <div className="text-center">
             <Button
               type="submit"
