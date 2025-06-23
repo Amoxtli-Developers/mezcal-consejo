@@ -63,7 +63,7 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
       </div>
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-navy-900/60"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto container-padding">

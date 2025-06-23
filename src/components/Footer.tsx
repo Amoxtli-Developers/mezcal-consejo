@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-navy-800 py-6 text-center ">
+        <div className="border-t border-white py-6 text-center ">
           <p className="text-navy-400 text-sm font-light">
             {t('footer.copyright')} <a href="https://www.amoxtli.tech" target='_blank' className="text-navy-300 hover:text-white transition-colors duration-200 font-light">Amoxtli Web Developers</a>
           </p>
