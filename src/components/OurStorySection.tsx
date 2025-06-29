@@ -16,6 +16,7 @@ import maestroImage from '@/assets/about/master.jpg';
 import regionImage from '@/assets/about/san.jpg';
 import procesoImage from '@/assets/about/process.jpg';
 import imagenImage from '@/assets/about/product.jpg';
+import BackgroundSVG from './BackgroundSVG';
 
 export default function OurStorySection() {
   const { t } = useTranslation();
@@ -54,7 +55,8 @@ export default function OurStorySection() {
   ];
 
   return (
-    <section id="our-story" className="section-padding bg-navy-900">
+    <section id="our-story" className="section-padding relative overflow-hidden">
+      <BackgroundSVG />
       <div className="max-w-7xl mx-auto container-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-medium text-white mb-6">
@@ -64,10 +66,10 @@ export default function OurStorySection() {
 
         <div className="relative">
           {/* Custom Navigation Buttons */}
-          <button className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-navy-900 shadow-lg flex items-center justify-center text-white hover:bg-navy-900 hover:text-white transition-all duration-300 -ml-16 hidden lg:flex">
+          <button className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-1 shadow-lg flex items-center justify-center text-white hover:bg-navy-900 hover:text-white transition-all duration-300 -ml-16 hidden lg:flex">
             <ChevronLeft className="w-6 h-6" />
           </button>
-          <button className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-navy-900 shadow-lg flex items-center justify-center text-white hover:bg-navy-900 hover:text-white transition-all duration-300 -mr-16 hidden lg:flex">
+          <button className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12shadow-lg flex items-center justify-center text-white hover:bg-navy-900 hover:text-white transition-all duration-300 -mr-16 hidden lg:flex">
             <ChevronRight className="w-6 h-6" />
           </button>
 
