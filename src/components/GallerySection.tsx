@@ -8,6 +8,7 @@ import gal3 from "@/assets/gallery/3.jpg";
 import gal4 from "@/assets/gallery/4.jpg";
 import gal5 from "@/assets/gallery/5.jpg";
 import gal6 from "@/assets/gallery/6.jpg";
+import BackgroundSVG from "./BackgroundSVG";
 
 export default function GallerySection() {
     const { t } = useTranslation();
@@ -40,7 +41,8 @@ export default function GallerySection() {
     ];
 
     return (
-        <section id="gallery" className="section-padding bg-navy-900">
+        <section id="gallery" className="section-padding relative overflow-hidden">
+            <BackgroundSVG />
             <div className="max-w-7xl mx-auto container-padding">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-4xl font-medium text-white mb-6">
