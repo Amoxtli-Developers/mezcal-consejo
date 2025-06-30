@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, User } from 'lucide-react';
+import { Mail, User, Loader2 } from 'lucide-react';
 
 interface ContactFormData {
   name: string;
@@ -24,11 +24,12 @@ export default function ContactSection() {
   } = useForm<ContactFormData>();
 
   const [isSending, setIsSending] = useState(false);
-  const [responseMessage, setResponseMessage] = useState('');
+  const [responseMessage, setResponseMessage] = useState<string | null>(null);
+  const [isError, setIsError] = useState(false);
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSending(true);
-    setResponseMessage('');
+    setResponseMessage(null);
 
     try {
       const res = await fetch('/api/send-email', {
@@ -39,11 +40,13 @@ export default function ContactSection() {
 
       if (!res.ok) throw new Error('Error al enviar el formulario');
 
-      const result = await res.json();
+      await res.json();
+      setIsError(false);
       setResponseMessage(t('contact.success') || '¡Mensaje enviado correctamente!');
       reset();
     } catch (err) {
       console.error(err);
+      setIsError(true);
       setResponseMessage(t('contact.error') || 'Hubo un error al enviar tu mensaje. Inténtalo más tarde.');
     } finally {
       setIsSending(false);
@@ -65,8 +68,9 @@ export default function ContactSection() {
           className="space-y-8 bg-white p-10 shadow-xl"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Nombre */}
             <div className="flex items-center gap-2">
-              <span className="bg-navy-900 p-2">
+              <span className="bg-navy-900 p-2 rounded-l">
                 <User className="w-6 h-6 text-white" />
               </span>
               <div className="w-full">
@@ -80,8 +84,9 @@ export default function ContactSection() {
               </div>
             </div>
 
+            {/* Email */}
             <div className="flex items-center gap-2">
-              <span className="bg-navy-900 p-2">
+              <span className="bg-navy-900 p-2 rounded-l">
                 <Mail className="w-6 h-6 text-white" />
               </span>
               <div className="w-full">
@@ -103,6 +108,7 @@ export default function ContactSection() {
             </div>
           </div>
 
+          {/* Mensaje */}
           <div>
             <Textarea
               {...register('message', { required: 'Este campo es requerido' })}
@@ -114,17 +120,31 @@ export default function ContactSection() {
             )}
           </div>
 
-          <div className="text-center">
+          {/* Botón y feedback */}
+          <div className="text-center space-y-4">
             <Button
               type="submit"
               size="lg"
               disabled={isSending}
-              className="bg-navy-900 hover:bg-navy-800 px-6 py-3 text-base font-medium"
+              className="relative inline-flex items-center bg-navy-900 hover:bg-navy-800 px-6 py-3 text-base font-medium text-white transition"
             >
-              {isSending ? t('contact.form.sending') || 'Enviando...' : t('contact.form.send')}
+              {isSending && (
+                <Loader2 className="animate-spin mr-2 h-5 w-5 text-white" />
+              )}
+              {isSending
+                ? t('contact.form.sending') || 'Enviando...'
+                : t('contact.form.send')}
             </Button>
+
             {responseMessage && (
-              <p className="text-sm mt-4 text-gray-700">{responseMessage}</p>
+              <div
+                className={`max-w-md mx-auto px-4 py-3 rounded ${isError
+                    ? 'bg-red-100 text-red-700'
+                    : 'bg-green-100 text-green-700'
+                  }`}
+              >
+                {responseMessage}
+              </div>
             )}
           </div>
         </form>
