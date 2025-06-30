@@ -8,7 +8,7 @@ export async function POST(request: Request): Promise<Response> {
     const { name, email, message } = await request.json();
 
     const msg = {
-      to: 'mtzelisalomon@gmail.com',
+      to: 'info@mezcalconsejo.com',
       from: 'contacto-mezcal-consejo@amoxtli.tech',
       subject: 'Nuevo mensaje de contacto',
       text: `Mensaje de ${name} (${email}): ${message}`,
