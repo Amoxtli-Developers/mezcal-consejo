@@ -102,8 +102,11 @@
       "name": "Nombre",
       "email": "Correo Electrónico",
       "message": "Mensaje",
-      "send": "Enviar Mensaje"
-    }
+      "send": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "success": "¡Mensaje enviado correctamente!",
+    "error": "Hubo un error al enviar tu mensaje. Inténtalo más tarde."
   },
   "footer": {
     "slogan": "Tradición en cada gota",
