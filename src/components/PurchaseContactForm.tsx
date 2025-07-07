@@ -69,11 +69,11 @@ export default function PurchaseContactForm({
             });
             if (!res.ok) throw new Error();
 
-            toast.success(t('purchaseForm.success'));
+            toast.success(t('purchaseForm.success'), { duration: 3000 });
             reset();
             onSuccess();
         } catch {
-            toast.error(t('purchaseForm.error'));
+            toast.error(t('purchaseForm.error'), { duration: 3000 });
         } finally {
             setIsSending(false);
         }

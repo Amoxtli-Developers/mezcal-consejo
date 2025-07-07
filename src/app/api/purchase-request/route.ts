@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
         // Construye el correo
         const msg = {
-            to: 'mtzelisalomon@gmail.com',
+            to: 'info@mezcalconsejo.com',
             from: 'compra-mezcal-consejo@amoxtli.tech',
             subject: 'Nueva solicitud de compra',
             text: `Solicitud de compra de ${name} (${email}, ${phone}): ${quantity === 'more' ? amount + ' unidades' : quantity + (quantity === 'case' ? ' (caja)' : ' botella(s)')} desde ${state}. Dirección: ${address}`,
