@@ -79,103 +79,128 @@ export default function PurchaseDialog({ open, onClose }: PurchaseDialogProps) {
     if (!open) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg w-11/12 max-w-3xl p-8 relative">
-                <button
-                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-                    onClick={handleCloseDialog}
-                >
-                    ✕
-                </button>
-
-                {/* Paso 1: elegir estado */}
-                {step === 1 && (
-                    <div className="space-y-6">
-                        <h2 className="text-2xl font-semibold">{t('purchaseDialog.stateTitle')}</h2>
-                        <select
-                            className="w-full border rounded px-4 py-3"
-                            value={state}
-                            onChange={(e) => setState(e.target.value)}
-                        >
-                            <option value="">{t('purchaseDialog.selectState')}</option>
-                            {mexicanStates.map((st) => (
-                                <option key={st} value={st}>{st}</option>
-                            ))}
-                        </select>
-                        <div className="flex justify-end gap-4">
-                            <Button variant="outline" onClick={handleCloseDialog}>
-                                {t('purchaseDialog.close')}
-                            </Button>
-                            <Button onClick={handleStateNext} disabled={!state}>
-                                {t('purchaseDialog.next')}
-                            </Button>
-                        </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
+            <div className="bg-white rounded-lg w-full max-w-lg max-h-[85vh] overflow-y-auto relative">
+                {/* Header con navegación */}
+                <div className="sticky top-0 bg-white border-b px-4 py-3 flex justify-between items-center">
+                    <div className="flex items-center gap-3">
+                        {(step === 2 || step === 3) && (
+                            <button
+                                className="text-gray-500 hover:text-gray-700"
+                                onClick={handleBack}
+                            >
+                                <ArrowLeft className="w-5 h-5" />
+                            </button>
+                        )}
+                        <h2 className="text-xl font-semibold">
+                            {step === 1 && t('purchaseDialog.stateTitle')}
+                            {step === 2 && t('purchaseDialog.quantityTitle')}
+                            {step === 3 && t('purchaseDialog.purchaseRequest')}
+                        </h2>
                     </div>
-                )}
+                    <button
+                        className="text-gray-500 hover:text-gray-700 text-xl leading-none"
+                        onClick={handleCloseDialog}
+                    >
+                        ✕
+                    </button>
+                </div>
 
-                {/* Paso 2: seleccionar cantidad (solo CDMX/Edomex) */}
-                {step === 2 && (
-                    <div className="space-y-6">
-                        <h2 className="text-2xl font-semibold">{t('purchaseDialog.quantityTitle')}</h2>
+                {/* Contenido */}
+                <div className="p-4">
+                    {/* Paso 1: elegir estado */}
+                    {step === 1 && (
+                        <div className="space-y-4">
+                            <select
+                                className="w-full border rounded px-3 py-2 text-sm"
+                                value={state}
+                                onChange={(e) => setState(e.target.value)}
+                            >
+                                <option value="">{t('purchaseDialog.selectState')}</option>
+                                {mexicanStates.map((st) => (
+                                    <option key={st} value={st}>{st}</option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
+
+                    {/* Paso 2: seleccionar cantidad (solo CDMX/Edomex) */}
+                    {step === 2 && (
                         <div className="space-y-3">
                             {['1', '2', '3', '4'].map((n) => (
-                                <label key={n} className="flex items-center gap-3">
+                                <label key={n} className="flex items-center gap-2 text-sm cursor-pointer">
                                     <input
                                         type="radio"
                                         name="quantity"
                                         value={n}
                                         checked={quantity === n}
                                         onChange={() => setQuantity(n)}
+                                        className="w-4 h-4"
                                     />
                                     {t('purchaseDialog.bottle', { count: Number(n) })}
                                 </label>
                             ))}
-                            <label className="flex items-center gap-3">
+                            <label className="flex items-center gap-2 text-sm cursor-pointer">
                                 <input
                                     type="radio"
                                     name="quantity"
                                     value="case"
                                     checked={quantity === 'case'}
                                     onChange={() => setQuantity('case')}
+                                    className="w-4 h-4"
                                 />
                                 {t('purchaseDialog.case')}
                             </label>
-                            <label className="flex items-center gap-3">
+                            <label className="flex items-center gap-2 text-sm cursor-pointer">
                                 <input
                                     type="radio"
                                     name="quantity"
                                     value="more"
                                     checked={quantity === 'more'}
                                     onChange={() => setQuantity('more')}
+                                    className="w-4 h-4"
                                 />
                                 {t('purchaseDialog.more')}
                             </label>
                         </div>
-                        <div className="flex justify-end gap-4">
-                            <Button variant="outline" onClick={handleBack}>
-                                {t('purchaseDialog.back')}
-                            </Button>
-                            <Button onClick={handleQuantityNext} disabled={!quantity}>
-                                {quantity === 'more' ? t('purchaseDialog.continue') : t('purchaseDialog.buy')}
-                            </Button>
-                        </div>
-                    </div>
-                )}
+                    )}
 
-                {/* Paso 3: formulario de contacto */}
-                {step === 3 && (
-                    <div className="space-y-6">
-                        <h2 className="text-2xl font-semibold">{t('purchaseDialog.purchaseRequest')}</h2>
-                        <div className="flex justify-end">
-                            <Button variant="ghost" onClick={handleBack}>
-                                <ArrowLeft /> {t('purchaseDialog.back')}
-                            </Button>
+                    {/* Paso 3: formulario de contacto */}
+                    {step === 3 && (
+                        <div className="space-y-4">
+                            <PurchaseContactForm
+                                initialState={state}
+                                initialQuantity={quantity}
+                                onSuccess={handleCloseDialog}
+                            />
                         </div>
-                        <PurchaseContactForm
-                            initialState={state}
-                            initialQuantity={quantity}
-                            onSuccess={handleCloseDialog}
-                        />
+                    )}
+                </div>
+
+                {/* Footer con botones */}
+                {step !== 3 && (
+                    <div className="sticky bottom-0 bg-white border-t px-4 py-3">
+                        <div className="flex justify-end gap-3">
+                            {/* Botones principales */}
+                            {step === 1 && (
+                                <>
+                                    <Button variant="outline" onClick={handleCloseDialog} size="sm">
+                                        {t('purchaseDialog.close')}
+                                    </Button>
+                                    <Button onClick={handleStateNext} disabled={!state} size="sm">
+                                        {t('purchaseDialog.next')}
+                                    </Button>
+                                </>
+                            )}
+
+                            {step === 2 && (
+                                <Button onClick={handleQuantityNext} disabled={!quantity} size="sm">
+                                    {quantity === 'more' ? t('purchaseDialog.continue') : t('purchaseDialog.buy')}
+                                </Button>
+                            )}
+
+
+                        </div>
                     </div>
                 )}
             </div>
