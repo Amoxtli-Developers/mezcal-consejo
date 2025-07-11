@@ -15,11 +15,11 @@ const mexicanStates = [
 ];
 
 const purchaseLinks: Record<string, string> = {
-    '1': 'https://shop.example.com/buy/1',
-    '2': 'https://shop.example.com/buy/2',
-    '3': 'https://shop.example.com/buy/3',
-    '4': 'https://shop.example.com/buy/4',
-    'case': 'https://shop.example.com/buy/case',
+    '1': 'https://mpago.la/1yWtrcP',
+    '2': 'https://mpago.la/2phSBuA',
+    '3': 'https://mpago.la/2uXNq4J',
+    '4': 'https://mpago.la/2to7okt',
+    'case': 'https://mpago.li/2kDUYJ4',
 };
 
 interface PurchaseDialogProps {
