@@ -79,14 +79,14 @@
     ]
   },
   "product": {
-    "title": "Mezcal Consejo Artisanal",
-    "description": "A small-batch mezcal made with 100% artisanal espadin agave. Smoky notes with floral and fruity touches, perfect for sipping neat or in cocktails.",
+    "title": "Espadín Joven Mezcal",
+    "description": "Smoky notes with floral and fruity hints — perfect for sipping neat or mixing in cocktails. Limited special batch.",
     "price": "$65 USD",
     "buyButton": "Buy",
     "details": {
       "title": "Product Details",
       "agave": "Agave: Espadín (Agave angustifolia)",
-      "region": "Region: Santiago Matatlán, Oaxaca",
+      "region": "Región: Valles Centrales, San Baltazar Chichicápam",
       "alcohol": "Alcohol: 47% Vol.",
       "production": "Production: 100% Artisanal",
       "aging": "Aging: Reposado 6 months"
