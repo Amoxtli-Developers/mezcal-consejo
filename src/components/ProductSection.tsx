@@ -73,9 +73,11 @@ export default function ProductSection() {
                                         <span className="text-white text-sm font-light">{t('product.details.agave').split(':')[0]}:</span>
                                         <span className="font-normal text-white text-sm">{t('product.details.agave').split(':')[1]}</span>
                                     </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-white text-sm font-light">{t('product.details.region').split(':')[0]}:</span>
-                                        <span className="font-normal text-white text-sm">{t('product.details.region').split(':')[1]}</span>
+                                    <div className="grid grid-cols-2">
+                                        <span className="text-white text-sm font-light">Región:</span>
+                                        <span className="text-white text-sm font-normal text-right break-words">
+                                            Valles Centrales, San Baltazar Chichicápam
+                                        </span>
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-white text-sm font-light">{t('product.details.alcohol').split(':')[0]}:</span>
