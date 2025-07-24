@@ -2,7 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ShoppingBag } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 interface HeroSectionProps {
@@ -20,22 +20,36 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
     }
   };
 
-  // Load Vimeo Player script and handle video load
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://player.vimeo.com/api/player.js';
     script.async = true;
-    
+
     script.onload = () => {
-      // Simulate video loading time
+      const iframe = document.getElementById('hero-vimeo') as HTMLIFrameElement;
+
+      if (!iframe) return;
+
+      const player = new (window as any).Vimeo.Player(iframe);
+
+      // Ir al segundo 10 al inicio
+      player.setCurrentTime(10).catch(() => {});
+
+      // Escuchar el tiempo actual para reiniciar cuando llegue al segundo 20
+      player.on('timeupdate', (data: { seconds: number }) => {
+        if (data.seconds >= 20) {
+          player.setCurrentTime(10).catch(() => {});
+        }
+      });
+
       setTimeout(() => {
         setVideoLoaded(true);
         onVideoLoad();
-      }, 2000);
+      }, 1000);
     };
-    
+
     document.head.appendChild(script);
-    
+
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
@@ -48,7 +62,8 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
       {/* Background Video - Vimeo */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <iframe 
-          src="https://player.vimeo.com/video/1091673803?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1&controls=0&title=0&byline=0&portrait=0"
+          id="hero-vimeo"
+          src="https://player.vimeo.com/video/1091673803?autoplay=1&loop=0&muted=1&background=1&controls=0&title=0&byline=0&portrait=0"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           style={{
             width: '177.78vh',
@@ -82,7 +97,6 @@ export default function HeroSection({ onVideoLoad }: HeroSectionProps) {
         >
             <span className="flex items-center gap-2">
               {t('hero.buyButton')}
-              {/* Lucide ShoppingBag Icon */}
               <ShoppingBag className="w-4 h-4" />
             </span>
         </Button>
