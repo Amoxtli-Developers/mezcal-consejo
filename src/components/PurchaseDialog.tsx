@@ -128,18 +128,18 @@ export default function PurchaseDialog({ open, onClose }: PurchaseDialogProps) {
                     {step === 2 && (
                         <div className="space-y-3">
                             {['1', '2', '3', '4'].map((n) => (
-                                <label key={n} className="flex items-center gap-2 text-sm cursor-pointer">
-                                    <input
-                                        type="radio"
-                                        name="quantity"
-                                        value={n}
-                                        checked={quantity === n}
-                                        onChange={() => setQuantity(n)}
-                                        className="w-4 h-4"
-                                    />
-                                    {t('purchaseDialog.bottle', { count: Number(n) })}
-                                </label>
-                            ))}
+  <label key={n} className="flex items-center gap-2 text-sm cursor-pointer">
+    <input
+      type="radio"
+      name="quantity"
+      value={n}
+      checked={quantity === n}
+      onChange={() => setQuantity(n)}
+      className="w-4 h-4"
+    />
+    {n === '1' ? '1 botella' : `${n} botellas`}
+  </label>
+))}
                             <label className="flex items-center gap-2 text-sm cursor-pointer">
                                 <input
                                     type="radio"
