@@ -1,15 +1,16 @@
-# Mezcal Consejo - Sitio Web
+# Mezcal Consejo - Sitio Web Estático
 
-Un sitio web elegante y moderno para la marca de mezcal artesanal Mezcal Consejo, construido con Next.js 14 y las mejores tecnologías modernas.
+Un sitio web elegante y moderno para la marca de mezcal artesanal Mezcal Consejo, construido con Next.js 14 y optimizado para exportación como sitio estático.
 
 ## 🚀 Tecnologías Utilizadas
 
-- **Next.js 14** - Framework de React
+- **Next.js 14** - Framework de React (con salida estática)
 - **TypeScript** - Tipado estático
 - **Tailwind CSS** - Framework de CSS utilitario
-- **Shadcn/ui** - Componentes de UI
+- **Radix UI** - Componentes accesibles
 - **Lucide React** - Iconos
 - **i18next** - Internacionalización (Español/Inglés)
+- **EmailJS** - Servicio de email para sitios estáticos
 - **Swiper** - Carrusel para la sección "Nuestra Historia"
 - **React Hook Form** - Formulario de contacto
 - **js-cookie** - Manejo de cookies para verificación de edad
@@ -60,27 +61,52 @@ Para cambiar el logo, simplemente reemplaza el archivo `logo.png` en la carpeta 
 
 ## 🚀 Instalación y Uso
 
+### 🛠️ Configuración Inicial
+
 1. **Instalar dependencias**:
 ```bash
 npm install
 ```
 
-2. **Ejecutar en desarrollo**:
+2. **Configurar EmailJS** (obligatorio para formularios):
+   - Lee la guía completa en `EMAILJS_SETUP.md`
+   - Crea cuenta en [EmailJS](https://www.emailjs.com/)
+   - Configura tus variables en `.env.local`
+
+### 💻 Desarrollo
+
 ```bash
+# Ejecutar en desarrollo
 npm run dev
 ```
 
-3. **Construir para producción**:
+### 📦 Exportar Sitio Estático
+
 ```bash
-npm run build
+# Exportar sitio estático
+npm run export
+
+# Los archivos estarán en la carpeta 'out'
 ```
 
-4. **Ejecutar en producción**:
-```bash
-npm start
-```
+### 🌐 Despliegue
 
-El sitio estará disponible en `http://localhost:3000`
+Puedes desplegar la carpeta `out` en:
+- Netlify (arrastra y suelta)
+- Vercel
+- GitHub Pages
+- Firebase Hosting
+- Cualquier hosting de archivos estáticos
+
+### 🧪 Pruebas Locales del Sitio Exportado
+
+```bash
+# Instalar servidor local
+npm install -g serve
+
+# Servir archivos estáticos
+serve out
+```
 
 ## 🛠️ Estructura del Proyecto
 
@@ -104,6 +130,9 @@ src/
 │   ├── GallerySection.tsx
 │   ├── ContactSection.tsx
 │   └── Footer.tsx
+├── services/
+│   ├── emailJSService.ts
+│   └── emailService.ts (backup)
 ├── lib/
 │   └── utils.ts
 ├── locales/
@@ -114,11 +143,14 @@ src/
 
 ## 🎯 Características Especiales
 
+- **Sitio Estático Completo**: Exportable sin dependencias de servidor
+- **Formularios Funcionales**: Integrados con EmailJS
 - **Single Page Application**: Toda la navegación es suave mediante scroll
 - **Navbar Sticky**: Se mantiene fijo en la parte superior
 - **Imágenes Optimizadas**: Todas las imágenes utilizan Next.js Image
 - **Componentes Reutilizables**: Arquitectura modular y mantenible
 - **Código Limpio**: TypeScript para mejor experiencia de desarrollo
+- **PWA Ready**: Optimizado para Progressive Web App
 
 ## 📝 Personalización
 
@@ -133,6 +165,20 @@ Para cambiar imágenes, actualiza las URLs en los componentes correspondientes.
 Los colores y estilos se pueden modificar en:
 - `tailwind.config.ts` - Configuración de Tailwind
 - `src/app/globals.css` - Estilos globales
+
+## 📚 Archivos Importantes
+
+- `EMAILJS_SETUP.md` - Guía completa para configurar EmailJS
+- `.env.local` - Variables de entorno (crea tu propio archivo)
+- `next.config.js` - Configuración de Next.js para exportación
+- `src/services/emailJSService.ts` - Servicio de email para sitios estáticos
+
+## ⚠️ Notas Importantes
+
+- **EmailJS es obligatorio** para que funcionen los formularios
+- Las variables de entorno deben tener prefijo `NEXT_PUBLIC_`
+- El sitio exportado NO requiere Node.js para funcionar
+- Todas las imágenes deben tener `unoptimized: true`
 
 ## 📧 Contacto
 

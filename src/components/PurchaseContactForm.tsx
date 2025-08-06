@@ -8,11 +8,12 @@ import toast from 'react-hot-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Loader2 } from 'lucide-react';
+import { emailService } from '@/services/emailJSService';
 
 interface PurchaseFormData {
     state: string;
     quantity: string;
-    amount: number;
+    amount: string; // Cambiar de number a string para consistencia
     street: string;
     exteriorNumber: string;
     interiorNumber?: string;
@@ -40,7 +41,7 @@ export default function PurchaseContactForm({
         defaultValues: {
             state: initialState,
             quantity: initialQuantity,
-            amount: initialQuantity && !isNaN(+initialQuantity) ? +initialQuantity : undefined,
+            amount: initialQuantity && !isNaN(+initialQuantity) ? initialQuantity : '', // Mantener como string
             street: '',
             exteriorNumber: '',
             interiorNumber: '',
@@ -57,21 +58,31 @@ export default function PurchaseContactForm({
 
     const onSubmit: SubmitHandler<PurchaseFormData> = async data => {
         setIsSending(true);
-        // reconstruye la dirección en un solo string
+        
         const { street, exteriorNumber, interiorNumber, colony, municipality, postalCode, ...rest } = data;
-        const fullAddress = `${street} ${exteriorNumber}${interiorNumber ? ` Int. ${interiorNumber}` : ''}, Col. ${colony}, ${municipality}, C.P. ${postalCode}`;
+        
+        const purchaseData = {
+            ...rest,
+            address: {
+                street,
+                exteriorNumber,
+                interiorNumber,
+                colony,
+                municipality,
+                postalCode
+            }
+        };
 
         try {
-            const res = await fetch('/api/purchase-request', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...rest, address: fullAddress }),
-            });
-            if (!res.ok) throw new Error();
-
-            toast.success(t('purchaseForm.success'), { duration: 3000 });
-            reset();
-            onSuccess();
+            const success = await emailService.sendPurchaseRequest(purchaseData);
+            
+            if (success) {
+                toast.success(t('purchaseForm.success'), { duration: 3000 });
+                reset();
+                onSuccess();
+            } else {
+                throw new Error('Error al enviar la solicitud');
+            }
         } catch {
             toast.error(t('purchaseForm.error'), { duration: 3000 });
         } finally {
@@ -89,8 +100,14 @@ export default function PurchaseContactForm({
             <div>
                 <label className="block mb-1">{t('purchaseForm.amountLabel')}</label>
                 <Input
-                    type="number"
-                    {...register('amount', { required: true, min: 1 })}
+                    type="text"
+                    {...register('amount', { 
+                        required: true, 
+                        validate: (value) => {
+                            const num = parseFloat(value);
+                            return !isNaN(num) && num > 0;
+                        }
+                    })}
                     placeholder={t('purchaseForm.amountPlaceholder')}
                 />
                 {errors.amount && (

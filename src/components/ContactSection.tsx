@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, User, Loader2 } from 'lucide-react';
+import { emailService } from '@/services/emailJSService';
+import toast from 'react-hot-toast';
 
 interface ContactFormData {
   name: string;
@@ -32,22 +34,22 @@ export default function ContactSection() {
     setResponseMessage(null);
 
     try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error('Error al enviar el formulario');
-
-      await res.json();
-      setIsError(false);
-      setResponseMessage(t('contact.success') || '¡Mensaje enviado correctamente!');
-      reset();
+      const success = await emailService.sendContactEmail(data);
+      
+      if (success) {
+        setIsError(false);
+        setResponseMessage(t('contact.success') || '¡Mensaje enviado correctamente!');
+        toast.success(t('contact.success') || '¡Mensaje enviado correctamente!');
+        reset();
+      } else {
+        throw new Error('Error al enviar el formulario');
+      }
     } catch (err) {
       console.error(err);
       setIsError(true);
-      setResponseMessage(t('contact.error') || 'Hubo un error al enviar tu mensaje. Inténtalo más tarde.');
+      const errorMessage = t('contact.error') || 'Hubo un error al enviar tu mensaje. Inténtalo más tarde.';
+      setResponseMessage(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setIsSending(false);
     }
